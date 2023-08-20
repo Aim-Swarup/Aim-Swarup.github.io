@@ -12,6 +12,9 @@ import { motion } from 'framer-motion'
 // variants
 import { fadeIn } from '../variants'
 
+// parallax-tilt
+import Tilt from 'react-parallax-tilt';
+
 const Home = () => {
   return (
     <div className='bg-primary/60 h-full'>
@@ -67,9 +70,11 @@ const Home = () => {
           animate='show'
           exit='hidden'
           transition={{ duration: 1, ease: 'easeInOut'}}
-          className='w-full h-full max-w-[350px] max-h-[400px] absolute -bottom-32 lg:bottom-0 lg:right-[20%]'
+          className='w-full h-full max-w-[350px] max-h-[400px] absolute -bottom-32 lg:bottom-0 lg:right-[15%] z-30'
         >
-          <Avatar />
+          <Tilt>
+            <Avatar />
+          </Tilt>
         </motion.div>
       </div>
     </div>

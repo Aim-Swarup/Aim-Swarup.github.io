@@ -6,6 +6,11 @@ import {
   HiRectangleGroup,
   HiChatBubbleBottomCenterText,
   HiEnvelope,
+  HiArchiveBoxArrowDown,
+  HiAcademicCap,
+  HiDocumentPlus,
+  HiDocumentCheck,
+  HiDocumentMagnifyingGlass,
 } from 'react-icons/hi2';
 
 // nav data
@@ -15,9 +20,9 @@ export const navData = [
   { name: 'services', path: '/services', icon: <HiRectangleGroup /> },
   { name: 'work', path: '/work', icon: <HiViewColumns /> },
   {
-    name: 'testimonials',
+    name: 'resume',
     path: '/testimonials',
-    icon: <HiChatBubbleBottomCenterText />,
+    icon: <HiDocumentMagnifyingGlass />,
   },
   {
     name: 'contact',
