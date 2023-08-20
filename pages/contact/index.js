@@ -40,7 +40,6 @@ const Contact = () => {
             animate='show'
             exit='hidden'
             className='flex-1 flex flex-col gap-6 w-full mx-auto'
-            target='_blank'
             action="https://formsubmit.co/5a154e2b5a2e0dc021399b1c2a6ed659"
             method="POST"
           >
@@ -51,7 +50,7 @@ const Contact = () => {
             </div>
             <input type='text' name='subject' placeholder='subject' className='input' />
             <input type='hidden' name='_captcha' value='false' />
-            <input type='hidden' name='_next' value='https://aim-swarup.github.io/contact' />
+            <input type='hidden' name='_next' value='https://aim-swarup.github.io/thank-you-note' />
             <textarea name='message' placeholder='message' className='textarea'></textarea>
             <button 
               type='submit'
