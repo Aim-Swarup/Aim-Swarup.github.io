@@ -50,7 +50,7 @@ const Contact = () => {
             </div>
             <input type='text' name='subject' placeholder='subject' className='input' />
             <input type='hidden' name='_captcha' value='false' />
-            <input type='hidden' name='_next' value='https://aim-swarup.github.io/thank-you-note' />
+            <input type='hidden' name='_next' value='https://aim-swarup.github.io/thank-you' />
             <textarea name='message' placeholder='message' className='textarea'></textarea>
             <button 
               type='submit'
