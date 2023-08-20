@@ -10,12 +10,12 @@ import {
 const Socials = () => {
   return (
     <div className='flex items-center gap-x-6 text-lg'>
-      <Link href={'https://www.linkedin.com/in/lakshya-swarup/'} className='hover:text-accent transition-all duration-300'>
+      <Link target='_blank' href={'https://www.linkedin.com/in/lakshya-swarup/'} className='hover:text-accent transition-all duration-300'>
         <RiLinkedinFill 
           size={25}
         />
       </Link>
-      <Link href={'https://github.com/Aim-Swarup'} className='hover:text-accent transition-all duration-300'>
+      <Link target='_blank' href={'https://github.com/Aim-Swarup'} className='hover:text-accent transition-all duration-300'>
         <RiGithubFill
           size={25} 
         />
