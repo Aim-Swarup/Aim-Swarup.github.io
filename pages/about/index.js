@@ -2,88 +2,139 @@ import React, { useState } from 'react';
 
 // icons
 import {
+  FaJava,
   FaHtml5,
   FaCss3,
   FaJs,
   FaReact,
-  FaWordpress,
-  FaFigma,
+  FaPython,
+  FaGit,
+  FaGithub,
 } from 'react-icons/fa';
+
+import {
+  PiTreeStructureFill
+} from 'react-icons/pi';
+
+import {
+  TbHexagonLetterC,
+} from 'react-icons/tb';
+
+import {
+  MdDataObject
+} from 'react-icons/md';
 
 import {
   SiNextdotjs,
   SiFramer,
-  SiAdobexd,
-  SiAdobephotoshop,
+  SiCplusplus,
+  SiKotlin,
+  SiRstudio,
+  SiExpress,
+  SiAnaconda,
+  SiAndroidstudio,
+  SiGooglecolab,
+  SiVisualstudiocode,
+  SiPycharm,
+  SiCanva,
+  SiAdobe,
+  SiMicrosoft,
+  SiLinux,
+  SiApple,
 } from 'react-icons/si';
 
 //  about data
 export const aboutData = [
   {
-    title: 'skills',
+    title: 'technical skills',
     info: [
       {
-        title: 'Web Development',
+        title: 'Languages & Frameworks',
         icons: [
-          <FaHtml5 key="1"/>,
-          <FaCss3 key="2"/>,
-          <FaJs key="3"/>,
-          <FaReact key="4"/>,
-          <SiNextdotjs key="5"/>,
-          <SiFramer key="6"/>,
-          <FaWordpress key="7"/>,
+          <TbHexagonLetterC key="C language"/>,
+          <SiCplusplus key="C++"/>,
+          <FaJava key="Java"/>,
+          <FaPython key="Python"/>,
+          <SiKotlin key="Kotlin"/>,
+          <SiRstudio key="R Programming"/>,
         ],
       },
       {
-        title: 'UI/UX Design',
-        icons: [<FaFigma key="8"/>, <SiAdobexd key="9" />, <SiAdobephotoshop key="0" />],
+        title: 'Web Development',
+        icons: [
+          <FaHtml5 key="HTML"/>,
+          <FaCss3 key="CSS"/>,
+          <FaJs key="JavaScript"/>,
+          <FaReact key="React"/>,
+          <SiNextdotjs key="NextJS"/>,
+          <SiFramer key="Framer"/>,
+          <SiExpress key="Express"/>,
+        ],
+      },
+      {
+        title: 'Software & Tools',
+        icons: [
+          <SiAndroidstudio key="Android Studios"/>, 
+          <SiAnaconda key="Anaconda" />, 
+          <SiGooglecolab key="Google Colaboratory" />, 
+          <SiVisualstudiocode key="Visual Studio - Code" />, 
+          <SiPycharm key="Pycharm" />,
+          <SiCanva key="Canva" />,
+          <SiAdobe key="Adobe" />,
+          <SiMicrosoft key="Microsoft" />,
+          <SiLinux key="Linux" />,
+          <SiApple key="Apple" />,
+        ],
+      },
+      {
+        title: 'Other Skills',
+        icons: [
+          <PiTreeStructureFill key="Data Structure and Algorithms"/>, 
+          <MdDataObject key="Object Oriented Programming" />, 
+          <FaGit key="Git" />, 
+          <FaGithub key="Github" />, 
+        ],
       },
     ],
   },
   {
-    title: 'awards',
+    title: 'Certificates',
     info: [
       {
-        title: 'Webby Awards - Honoree',
-        stage: '2011 - 2012',
+        title: 'IBM Certified Introduction to Cloud Computing',
+        stage: 'May 2023',
       },
       {
-        title: 'Adobe Design Achievement Awards - Finalist',
-        stage: '2009 - 2010',
-      },
-    ],
-  },
-  {
-    title: 'experience',
-    info: [
-      {
-        title: 'UX/UI Designer - XYZ Company',
-        stage: '2012 - 2023',
+        title: 'Microsoft Certified: Azure Fundamentals',
+        stage: 'May 2023',
       },
       {
-        title: 'Web Developer - ABC Agency',
-        stage: '2010 - 2012',
+        title: 'Microsoft Certified: Power Platform Fundamentals',
+        stage: 'May 2023',
       },
       {
-        title: 'Intern - DEF Corporation',
-        stage: '2008 - 2010',
-      },
-    ],
-  },
-  {
-    title: 'credentials',
-    info: [
-      {
-        title: 'Web Development - ABC University, LA, CA',
-        stage: '2011',
+        title: "Google: Cloud Technical Series'23",
+        stage: 'Apr 2023',
       },
       {
-        title: 'Computer Science Diploma - AV Technical Institute',
-        stage: '2009',
+        title: 'Forage: Developer Virtual Experience Program',
+        stage: 'Jan 2023',
       },
       {
-        title: 'Certified Graphic Designer - ABC Institute, Los Angeles, CA',
-        stage: '2006',
+        title: 'Coursera: Design Digital Products using Canva',
+        stage: 'Nov 2022',
+      },
+      {
+        title: 'Coursera: Create logos using Canva for an ebrand',
+        stage: 'Nov 2022',
+      },
+      {
+        title: 'Coursera: Get Started with Adobe Illustrator',
+        stage: 'Nov 2022',
+      },
+      {
+        title: 'NVIDIA: Fundamentals of Deep Learning',
+        stage: 'Sep 2022',
       },
     ],
   },
@@ -102,9 +153,10 @@ import CountUp from 'react-countup';
 
 const About = () => {
   const [index, setIndex] = useState(0);
+  const [hoveredIcon, setHoveredIcon] = useState(null); // State to track hovered icon
   console.log(index);
   return (
-    <div className='h-full bg-primary/30 py-32 text-center xl:text-left'>
+    <div className='h-full bg-primary/30 py-32 text-center xl:text-left overflow-y-scroll'>
       <Circles />
       {/* avatar img */}
       <motion.div 
@@ -112,7 +164,7 @@ const About = () => {
         initial='hidden'
         animate='show'
         exit='hidden' 
-        className='hidden xl:flex max-w-[400px] max-h-[350px] absolute bottom-0 -left-[220px]'
+        className='hidden xl:flex max-w-[380px] max-h-[330px] absolute bottom-0 -left-[220px]'
       >
         <Avatar />
       </motion.div>
@@ -126,8 +178,7 @@ const About = () => {
             exit='hidden' 
             className='h2'
           >
-            Captivating <span className='text-accent'>stories</span> <br /> birth 
-            magnificent designs.
+            Coding the <span className='text-accent'>web</span> <br /> weaving possibilities.
           </motion.h2>
           <motion.p
             variants={fadeIn('right', 0.4)}
@@ -136,9 +187,9 @@ const About = () => {
             exit='hidden'
             className='max-w-[500px] z-30 mx-auto xl:mx-0 mb-2 xl:mb-2 px-2 xl:px-0'
           >
-            10 years ago, I began freelancing as a developer. Since then, I&apos;ve 
-            done remote work for agencies, consulted for startups, and 
-            collaborated on digital products for business and consumer use.
+            A student @VIT. <br /> I&apos;m looking for a chance 
+            to utilize and develop my coding and app development skills. A capable student 
+            who is motivated to effectively contribute and get as much knowledge as possible.
           </motion.p>
           {/* counters */}
           <motion.div
@@ -149,40 +200,22 @@ const About = () => {
             className='hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8'
           >
             <div className='flex flex-1 xl:gap-x-6'>
-              {/* experience */}
+              {/* Technical Skills */}
               <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={10} duration={5} /> +
+                  <CountUp start={0} end={27} duration={5} /> +
                 </div>
-                <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>
-                  Year of experience
-                </div>
-              </div>
-              {/* clients */}
-              <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
-                <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={250} duration={5} /> +
-                </div>
-                <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>
-                  Satisfied clients
+                <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[200px]'>
+                  Technical Skills
                 </div>
               </div>
-              {/* projects */}
-              <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
-                <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={650} duration={5} /> +
-                </div>
-                <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>
-                  Finished projects
-                </div>
-              </div>
-              {/* awards */}
+              {/* Certifications */}
               <div className='relative flex-1'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={8} duration={5} /> +
+                  <CountUp start={0} end={9} duration={5} /> +
                 </div>
-                <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>
-                  Winning awards
+                <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[200px]'>
+                  Certifications
                 </div>
               </div>
             </div>
@@ -227,7 +260,27 @@ const About = () => {
                     <div className='flex gap-x-4'>
                       {/* icons */}
                       {item.icons?.map((icon, itemIndex) => {
-                        return <div className='text-2xl text-white'  key={itemIndex} >{icon}</div>
+                        return <
+                          // div className='text-2xl text-white'  key={itemIndex} setHoveredIcon={key} >{icon}</div>
+                          div
+                            className='text-2xl text-white relative' // Added 'relative' class
+                            key={itemIndex}
+                            onMouseEnter={() => setHoveredIcon(icon.key)} // Set hovered icon on mouse enter
+                            onMouseLeave={() => setHoveredIcon(null)}    // Reset hovered icon on mouse leave
+                          >
+                            {icon}
+                            {hoveredIcon === icon.key && ( // Show tooltip when the icon is hovered
+                              <div className='absolute top-[-36px] left-1/2 transform -translate-x-1/2'>
+                                <div className='bg-white relative flex text-primary items-center p-[6px] rounded-[3px]'>
+                                  <div className='text-[12px] leading-none font-semibold capitalize whitespace-nowrap'>
+                                    {icon.key}
+                                  </div>
+                                  {/* Triangle */}
+                                  <div className='border-solid border-l-white border-l-8 border-y-transparent border-y-[6px] border-r-0 absolute -bottom-2 top-[100%] left-1/2 transform -translate-x-1/2 rotate-90'></div>
+                                </div>
+                              </div>
+                            )}
+                          </div>
                       })}
                     </div>
                   </div>

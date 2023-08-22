@@ -16,7 +16,7 @@ const Avatar = () => {
       }}
     >
       <Image
-        src={'/astronaut.png'}
+        src={'/astronaut.svg'}
         width={737}
         height={678}
         alt=''

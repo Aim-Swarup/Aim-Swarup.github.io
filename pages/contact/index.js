@@ -19,7 +19,7 @@ import Tilt from 'react-parallax-tilt';
 const Contact = () => {
   const [isImageHovered, setIsImageHovered] = useState(false);
   return (
-    <div className='h-full bg-primary/30'>
+    <div className='h-full bg-primary/30 overflow-y-scroll'>
       <div className='container mx-auto py-32 text-center xl:text-left flex items-center justify-center xl:justify-end h-full gap-x-6'>
         {/* text & form */}
         <div className='flex flex-col w-full xl:w-[65%] max-w-[700px] z-30'>
