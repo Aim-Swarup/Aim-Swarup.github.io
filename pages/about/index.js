@@ -187,9 +187,10 @@ const About = () => {
             exit='hidden'
             className='max-w-[500px] z-30 mx-auto xl:mx-0 mb-2 xl:mb-2 px-2 xl:px-0'
           >
-            A student @VIT. <br /> I&apos;m looking for a chance 
-            to utilize and develop my coding and app development skills. A capable student 
-            who is motivated to effectively contribute and get as much knowledge as possible.
+            A student @VIT. <br /> I am seeking an opportunity to leverage 
+            and enhance my coding and app development proficiencies. 
+            I am a diligent student, driven to make meaningful contributions 
+            and acquire extensive knowledge.
           </motion.p>
           {/* counters */}
           <motion.div
