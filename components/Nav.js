@@ -12,7 +12,7 @@ import {
 export const navData = [
   { name: 'home', path: '/', icon: <HiHome /> },
   { name: 'about', path: '/about', icon: <HiUser /> },
-  { name: 'work', path: '/work', icon: <HiRectangleGroup /> },
+  // { name: 'work', path: '/work', icon: <HiRectangleGroup /> },
   {
     name: 'resume',
     path: 'https://drive.google.com/file/d/1AXMGFJxiNwFL8l4vJnHELONFjf9dPFvq/view?usp=drive_link',
