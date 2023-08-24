@@ -43,7 +43,7 @@ const Home = () => {
             Welcome to My World of Wonders!
           </motion.p>
           {/* btn */}
-          <div className='flex justify-center xl:hidden relative'>
+          {/* <div className='flex justify-center xl:hidden relative'>
             <ProjectsBtn />
           </div>
           <motion.div 
@@ -54,7 +54,7 @@ const Home = () => {
             className='hidden xl:flex'
           >
             <ProjectsBtn />
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
       {/* image */}

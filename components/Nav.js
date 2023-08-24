@@ -15,7 +15,7 @@ export const navData = [
   // { name: 'work', path: '/work', icon: <HiRectangleGroup /> },
   {
     name: 'resume',
-    path: 'https://drive.google.com/file/d/1AXMGFJxiNwFL8l4vJnHELONFjf9dPFvq/view?usp=drive_link',
+    path: '/resume',
     icon: <HiDocumentMagnifyingGlass />,
   },
   {
@@ -42,30 +42,30 @@ const Nav = () => {
       backdrop-blur-sm text-3xl xl:text-xl xl:rounded-full'
       >
         {navData.map((link, index) => {
-          if (link.name === 'resume') {
-            return (
-              <a
-                className={`relative flex items-center group hover:text-accent transition-all duration-300`}
-                href={link.path}
-                target="_blank"  // Open in a new tab
-                key={index}
-                rel="noopener noreferrer" // Recommended for security reasons
-              >
-                  {/* tooltip */}
-                  <div className='absolute pr-14 right-0 hidden xl:group-hover:flex'>
-                    <div className='bg-white relative flex text-primary items-center p-[6px] rounded-[3px]'>
-                      <div className='text-[12px] leading-none font-semibold capitalize'>
-                        {link.name}
-                      </div>
-                      {/* triangle */}
-                      <div className='border-solid border-l-white border-l-8 border-y-transparent border-y-[6px] border-r-0 absolute -right-2'></div>
-                    </div>
-                  </div>
-                  {/* icon */}
-                <div>{link.icon}</div>
-              </a>
-            );
-          } else {
+          // if (link.name === 'resume') {
+          //   return (
+          //     <a
+          //       className={`relative flex items-center group hover:text-accent transition-all duration-300`}
+          //       href={link.path}
+          //       target="_blank"  // Open in a new tab
+          //       key={index}
+          //       rel="noopener noreferrer" // Recommended for security reasons
+          //     >
+          //         {/* tooltip */}
+          //         <div className='absolute pr-14 right-0 hidden xl:group-hover:flex'>
+          //           <div className='bg-white relative flex text-primary items-center p-[6px] rounded-[3px]'>
+          //             <div className='text-[12px] leading-none font-semibold capitalize'>
+          //               {link.name}
+          //             </div>
+          //             {/* triangle */}
+          //             <div className='border-solid border-l-white border-l-8 border-y-transparent border-y-[6px] border-r-0 absolute -right-2'></div>
+          //           </div>
+          //         </div>
+          //         {/* icon */}
+          //       <div>{link.icon}</div>
+          //     </a>
+          //   );
+          // } else {
               return (
                 <Link 
                   className={`${
@@ -88,7 +88,7 @@ const Nav = () => {
                   <div>{link.icon}</div>
                 </Link>
               );
-            }
+            // }
         })}
       </div>
     </nav>

@@ -55,7 +55,7 @@ const Contact = () => {
             <button 
               type='submit'
               className='btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group'
-              >
+            >
               <span className='group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500'>
                 Let&apos;s talk
               </span>
